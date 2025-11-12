@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parthiv Mahesh | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Parthiv Mahesh</div>
+      <ul class="nav-links">
+        <li><a href="#hero" class="active-link">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <h2>Building practical AI & web tools — clean, fast, and human-friendly.</h2>
+      <p>I’m <strong>Parthiv Mahesh</strong>, a CSE (AI & ML) student who loves turning ideas into polished, real-world projects.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi! I’m <strong>Parthiv Mahesh</strong>, a <b>B.Tech CSE (Artificial Intelligence & Machine Learning)</b> student at 
+        <b>AMET University, Chennai</b>, pursuing my degree through the <b>Kalvium Work-Integrated Learning Program</b>.
+      </p>
+      <p>
+        I’m passionate about building intelligent systems, writing clean code, and solving real-world problems through AI-driven software.
+        My learning approach is hands-on — I love experimenting with projects that combine logic, creativity, and impact.
+      </p>
+      <p>
+        At Kalvium, I’m developing industry-ready skills in <b>Python</b>, <b>Web Development</b>, <b>Machine Learning</b>, and 
+        <b>Software Engineering practices</b>, with a strong focus on writing scalable and maintainable code.
+      </p>
+      <p>
+        When I’m not coding, you’ll find me exploring tech communities, experimenting with new tools, or creating engaging tech content.
+        My goal is to become a skilled software developer and eventually a ship captain who blends technology and leadership at sea 🌊⚓
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>FEWD Journey Website</strong> – A responsive portfolio-style site that showcases my Frontend Web Development learning path with Kalvium. Built using HTML, CSS, and JavaScript, it features smooth navigation, a learning timeline, and project highlights.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <address>
+        <a href="mailto:parthiv.mahesh.s.147@kalvium.community">parthiv.mahesh.s.147@kalvium.community</a><br>
+        <a href="https://github.com/parthiv2K07">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/parthiv-mahesh-4228b3292">LinkedIn</a>
+      </address>
+
+      <form aria-label="Contact form">
+        <label>Name <input name="name" required></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>Message <textarea name="message" required></textarea></label>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <small>© <span id="year"></span> Parthiv Mahesh • Built with ❤️ and HTML5</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+    // Highlight active link while scrolling
+    const sections = document.querySelectorAll("section");
+    const navAnchors = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navAnchors.forEach((link) => {
+        link.classList.remove("active-link");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active-link");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
